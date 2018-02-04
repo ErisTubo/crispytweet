@@ -24,6 +24,9 @@ social_sites:
 
 # Build settings
 
+plugins:
+  - jekyll-seo-tag
+
 exclude:
   - Gemfile
   - Gemlfile.lock
