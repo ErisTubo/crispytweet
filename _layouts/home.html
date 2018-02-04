@@ -202,7 +202,7 @@
       <p>Tired of seeing your work of art downwashed by twitter? Don't worry fam! We got you.</p>
       <section class="timeline-tweet-box">
         <div class="twitter-profil-picture"><i class="icon icon-twitter">&#xf099;</i></div>
-        <div id="tweet-box">Drop your crispy image here. Or just click, I won't judge.</div>
+        <div id="tweet-box" onclick="toUpload()">Drop your crispy image here. Or just click, I won't judge.</div>
         <div class="upload">
           <label id="button">
             <input id="file-upload" type="file" style="display: none;"></input>
@@ -250,11 +250,14 @@
     function dropImage(event) {
       event.stopPropagation();
       event.preventDefault();
-      console.log(event);
       var filename = event.dataTransfer.files[0].name;
       var suffix = filename.lastIndexOf('.');
       filename = filename.substr(0,suffix)+"_twitter-safe.png";
       whereTheMagicHappends(filename,event.dataTransfer.files[0]);
+    }
+
+    function toUpload() {
+      uploadclick.click();
     }
 
     function uploadImage(event) {
@@ -262,7 +265,6 @@
       var suffix = filename.lastIndexOf('.');
       filename = filename.substr(0,suffix)+"_twitter-safe.png";
       whereTheMagicHappends(filename,event.target.files[0]);
-      console.log(filename);
     }
 
     uploaddrop.addEventListener('dragenter', noopHandler, false);

@@ -202,7 +202,7 @@
       <p>Tired of seeing your work of art downwashed by twitter? Don't worry fam! We got you.</p>
       <section class="timeline-tweet-box">
         <div class="twitter-profil-picture"><i class="icon icon-twitter">&#xf099;</i></div>
-        <div id="tweet-box">Drop your crispy image here. Or just click, I won't judge.</div>
+        <div id="tweet-box" onclick="toUpload()">Drop your crispy image here. Or just click, I won't judge.</div>
         <div class="upload">
           <label id="button">
             <input id="file-upload" type="file" style="display: none;"></input>
@@ -230,9 +230,9 @@
       </section>
     </main>
     <footer>
-      <small>This app is an animosity against the atrocity act of design of the <a href="http://http://ravenworks.ca/twitimagefix">last version</a> by <a href="https://twitter.com/RavenWorks">@Ravenworks</a>.</small>
-      <small>I know you are reading this senpai 😋</small>
-      <small> Suggestions & fixes <a href="https://github.com/ErisTubo/crispytweet" target="_blank">here</a></small>
+      <small>This app is my redesign of <a href="http://http://ravenworks.ca/twitimagefix">twitimagefix</a> by <a href="https://twitter.com/RavenWorks">@Ravenworks</a>.</small>
+      <small>I know you are reading this 😋</small>
+      <small> Suggestions & fixes <a href="https://github.com/ErisTubo/crispytweet" target="_blank">here</a> or just tweet me at <a href="https://twitter.com/ErisTubo">@ErisTubo</a></small>
     </footer>
   </body>
   <script>
@@ -250,11 +250,14 @@
     function dropImage(event) {
       event.stopPropagation();
       event.preventDefault();
-      console.log(event);
       var filename = event.dataTransfer.files[0].name;
       var suffix = filename.lastIndexOf('.');
       filename = filename.substr(0,suffix)+"_twitter-safe.png";
       whereTheMagicHappends(filename,event.dataTransfer.files[0]);
+    }
+
+    function toUpload() {
+      uploadclick.click();
     }
 
     function uploadImage(event) {
@@ -262,7 +265,6 @@
       var suffix = filename.lastIndexOf('.');
       filename = filename.substr(0,suffix)+"_twitter-safe.png";
       whereTheMagicHappends(filename,event.target.files[0]);
-      console.log(filename);
     }
 
     uploaddrop.addEventListener('dragenter', noopHandler, false);
