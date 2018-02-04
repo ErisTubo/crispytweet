@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html id="html">
+  <head>
+    <title>CrispyTweet</title>
+    <link src="">
+    <style>
+    @font-face {
+      font-family: 'fontello';
+      src: url('./font/fontello.eot?35911847');
+      src: url('./font/fontello.eot?35911847#iefix') format('embedded-opentype'),
+           url('./font/fontello.woff?35911847') format('woff'),
+           url('./font/fontello.ttf?35911847') format('truetype'),
+           url('./font/fontello.svg?35911847#fontello') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    html {
+      overflow-y: scroll;
+    }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb { background: #1da1f2; border-radius: 50px; }
+    ::-webkit-scrollbar-thumb:hover { background: #555;}
+    .icon {
+      font-family: 'fontello';
+      font-style: normal;
+      font-size: 32px;
+    }
+    body {
+      background: #e6ecf0;
+      margin: 0;
+      text-align: center;
+      color: #1da1f2;
+      font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    }
+    header {
+      background: #ffffff;
+      padding: 0px 0 6px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.25);
+      box-shadow: 0 1px 1px 1px rgba(0,0,0,0.05);
+    }
+    h1 {
+      margin: 0;
+      letter-spacing: 6px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 14px;
+    }
+    main {
+      margin: 120px auto;
+      transition: all 1s ease;
+    }
+    .timeline-tweet-box {
+      padding: 10px 10px 10px 30px;
+      background-color: #E8F4FB;
+      width: 588px;
+      margin: 0 auto;
+      box-shadow: 0 1px 3px 1px rgba(29,161,242,0.2);
+    }
+    .twitter-profil-picture {
+      display: inline-block;
+      margin-right: 8px;
+      position: relative;
+      top: 3px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: white;
+    }
+    #tweet-box {
+      transition: all 1s ease;
+      display: inline-block;
+      background: #ffffff;
+      height: 80px;
+      width: 506px;
+      border-radius: 7px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: #A3D4F2;
+      color: #aab8c2;
+      text-align: left;
+      padding: 5px 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .upload {
+      clear: both;
+      overflow: hidden;
+    }
+    #button {
+      cursor: pointer;
+      float: right;
+      background-color: #b8def5;
+      border: none;
+      color: white;
+      margin: 10px 10px;
+      padding: 6px 16px;
+      border-radius: 100px;
+      line-height: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: bold;
+      transition: all 1s ease;
+      border: 1px solid rgba(29, 161, 242, 0);
+      text-shadow: 0px 1px 9px rgba(29, 161, 242, 0);
+    }
+    #button:hover {
+      transition: all 0.3s ease;
+      background-color: rgba(29, 161, 242, 0.5);
+      border: 1px solid rgba(29, 161, 242, 0.7);
+      text-shadow: 0px 1px 9px rgba(29, 161, 242, 1);
+    }
+    #explain {
+      cursor: pointer;
+      background-color: inherit;
+      border: none;
+      color: inherit;
+      margin: 10px;
+      font-size: inherit;
+      font-weight: inherit;
+    }
+    #info {
+      width: 588px;
+      color: #555555;
+      font-size: 14px;
+      margin: 0 auto;;
+      padding: 20px;
+      background: #ffffff;
+      transition: all 1s ease;
+      box-shadow: 0 1px 3px 1px rgba(0,0,0,0.3);
+      height: auto;
+      max-height: 1000px;
+    }
+    .brand {
+      color: #1da1f2;
+    }
+    img {
+      margin: 10px;
+      transition: all 0.8s ease;
+    }
+    .emoji {
+      font-family: sans-serif;
+    }
+    button:focus {outline:0;}
+    footer {
+      border-top: 1px solid rgba(0,0,0,0.25);
+      box-shadow: 0 -1px 1px 1px rgba(0,0,0,0.05);
+      background: #ffffff;
+      position: fixed;
+      bottom: 0;
+      padding: 3px 0;
+      width: 100%;
+      overflow: hidden;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    function showInfo() {
+      var i1 = document.getElementById('img1');
+      var i2 = document.getElementById('img2');
+      var x = document.getElementById('info');
+      var y = document.getElementById('tweet-box');
+      var z = document.getElementById('main');
+      if (x.style.opacity == 0) {
+          i1.style.height    = '256px';
+          i2.style.height    = '256px';
+          x.style.opacity   = 1;
+          x.style.color     = '#555555';
+          x.style.marginTop = '3%';
+          x.style.maxHeight = '1000px';
+          x.style.height = 'auto';
+          y.style.height    = '20px';
+          z.style.marginTop = '10px';
+      } else {
+        x.style.height      = 0;
+          i1.style.height   = 0;
+          i2.style.height   = 0;
+          x.style.opacity   = 0;
+          x.style.color     = '#ffffff';
+          x.style.marginTop = '10%';
+          x.style.maxHeight = '0';
+          x.style.height = 'auto';
+          y.style.height    = '80px';
+          z.style.marginTop = '120px';
+      }
+    }
+  </script>
+  </head>
+  <body>
+    <header>
+      <h1>CrispyTweet</h1>
+      <h2>Make images crispy again!</h2>
+    </header>
+    <main id="main">
+      <p>Tired of seeing your work of art downwashed by twitter? Don't worry fam! We got you.</p>
+      <section class="timeline-tweet-box">
+        <div class="twitter-profil-picture"><i class="icon icon-twitter">&#xf099;</i></div>
+        <div id="tweet-box">Drop your crispy image here. Or just click, I won't judge.</div>
+        <div class="upload">
+          <label id="button">
+            <input id="file-upload" type="file" style="display: none;"></input>
+            Upload
+          </label>
+        </div>
+      </section>
+      <button id="explain" onclick="showInfo()">How does this work?</button>
+      <section id="info" style="opacity: 0; height: 0;">
+        <p>
+          In many cases Twitter will washdown the quality of your image with its JPEG compression.
+        </p>
+        <p>
+          That is for small pictures like pixel art very unfortunate. See example down below.</br>
+          <img id="img1" src="Test.png" style="margin-right: 1px; height: 0;"></img><img id="img2" src="Test.jpg" style="margin-left: 1px; height: 0;"></img></br>
+          <small>Original (Even though its PNG) -> Twitter (compressed to JPEG)</small>
+        </p>
+        <span class="brand">CrispyTweet</span> will take your picture and just add 1 pixel layer of transparency on top of the image so twitter will recognize it as a <i>"transparent image"</i> and the format will stay preserved.
+        After uploading you can find your file as <i>"filename_twitter-safe"</i> copy in your download folder.
+        <p>
+          This app does not transmit anything to any servers or anything <span class="emoji">( ͡° ͜ʖ ͡°)</span></br>
+          Seriously, all stuff happend on client side (your web browser).
+        </p>
+        <p>Have fun! And spread the bread!</p>
+      </section>
+    </main>
+    <footer>
+      <small>This app is an animosity against the atrocity act of design of the last version.</small>
+      <small> Suggestions & fixes <a href="https://github.com/ErisTubo/crispytweet" target="_blank">here</a></small>
+    </footer>
+  </body>
+  <script>
+    var uploaddrop = document.getElementById('tweet-box');
+    var uploadclick = document.getElementById('button');
+
+    var canvas = document.createElement('canvas');
+    var context = canvas.getContext('2d');
+
+    function noopHandler(evt) {
+      evt.stopPropagation();
+      evt.preventDefault();
+    }
+
+    function dropImage(event) {
+      event.stopPropagation();
+      event.preventDefault();
+      console.log(event);
+      var filename = event.dataTransfer.files[0].name;
+      var suffix = filename.lastIndexOf('.');
+      filename = filename.substr(0,suffix)+"_twitter-safe.png";
+      whereTheMagicHappends(filename,event.dataTransfer.files[0]);
+    }
+
+    function uploadImage(event) {
+      var filename = event.target.files[0].name;
+      var suffix = filename.lastIndexOf('.');
+      filename = filename.substr(0,suffix)+"_twitter-safe.png";
+      whereTheMagicHappends(filename,event.target.files[0]);
+      console.log(filename);
+    }
+
+    uploaddrop.addEventListener('dragenter', noopHandler, false);
+		uploaddrop.addEventListener('dragexit', noopHandler, false);
+		uploaddrop.addEventListener('dragover', noopHandler, false);
+		uploaddrop.addEventListener('drop', dropImage, false);
+
+    uploadclick.addEventListener('change', uploadImage, false);
+
+
+    function whereTheMagicHappends(filename,origin) {
+      var file = new FileReader();
+      file.onload = function() {
+        image = new Image();
+        image.onerror = function() {
+          alert('This is not an image file...');
+        }
+        image.onload = function() {
+          canvas.width = image.width;
+          canvas.height = image.height;
+
+          context.drawImage(image,0,0);
+          pixel = context.getImageData(0,0,1,1);
+          if (pixel.data[3] < 255) {
+            alert("This image already has transparency. Just upload and see for yourself :)!");
+						return;
+          }
+          pixel.data[3] = 254;
+          context.putImageData(pixel,0,0);
+          var dl = document.createElement('a');
+					dl.href = canvas.toDataURL("image/png");
+					dl.download = filename;
+
+					document.body.appendChild(dl);
+					dl.click();
+					document.body.removeChild(dl);
+        }
+        image.src = file.result;
+      }
+      file.readAsDataURL(origin);
+    }
+  </script>
+</html>

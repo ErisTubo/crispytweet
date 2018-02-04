@@ -1,0 +1,29 @@
+title: CrispyTweet
+author: Eris Tubo
+email: eristubi@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Make images crispy again!
+version: V-1.0.0
+# Google Analytics
+google_analytics_id: UN-XXXX
+
+# Social sites
+social_sites:
+  #twitter: eristubo
+  #github:  eristubo
+  #dribbble: eristubo
+  #facebook: eristubo
+  #flickr: eristubo
+  #instagram: eristubo
+  #linkedin: eristubo
+  #pinterest: eristubo
+  #youtube: eristub
+  #googleplus: +eristubo
+  #rss: rss
+
+
+# Build settings
+
+exclude:
+  - Gemfile
+  - Gemlfile.lock
