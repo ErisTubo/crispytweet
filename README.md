@@ -6,3 +6,4 @@ This app is inspired by the this [version](http://ravenworks.ca/twitimagefix/) m
 # To do
 - [ ] Clean up Css
 - [ ] Minify
+- [ ] Add to project section on the blog
