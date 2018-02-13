@@ -1,4 +1,9 @@
 # crispytweet
 Stop twitter from image compressing with this converter! Make image crispy again!
 
-This app is inspired by the this [version](http://ravenworks.ca/twitimagefix/) (with horrible design) made by [@RavenWorks](https://twitter.com/ravenworks)
+This app is inspired by the this [version](http://ravenworks.ca/twitimagefix/) made by [@RavenWorks](https://twitter.com/ravenworks)
+
+# To do
+- [ ] Clean up Css
+- [ ] Minify
+- [ ] Add to project section on the blog
